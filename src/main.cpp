@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include "settings.h"
+
 void setup() {
 // write your initialization code here
 }
