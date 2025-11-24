@@ -15,7 +15,7 @@ void timerHandler() {
  * @param basePeriod The base period of the scheduler in milliseconds
  */
 void Scheduler::init(int basePeriod) {
-    this->basePeriod = basePeriod;
+    this->myBasePeriod = basePeriod;
     this->nTasks = 0;
 
     timerFlag = false;
@@ -48,7 +48,7 @@ void Scheduler::schedule() {
     timerFlag = false;
 
     for (int i = 0; i < nTasks; i++) {
-        if (taskList[i]->update(basePeriod)) {
+        if (taskList[i]->update(myBasePeriod)) {
             taskList[i]->tick();
         }
     }
